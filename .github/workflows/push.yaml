@@ -3,7 +3,6 @@ on:
   release:
     types: [published]
 env:
-  # TODO: Change variable to your image's name.
   IMAGE_NAME: mydockertest
 jobs:
   # Push image to GitHub Packages.
@@ -40,3 +39,4 @@ jobs:
 
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID:latest
