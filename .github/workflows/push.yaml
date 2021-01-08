@@ -1,7 +1,5 @@
 name: Publish Docker image
-on:
-  release:
-    types: [published]
+on: push
 env:
   IMAGE_NAME: mydockertest
 jobs:
@@ -39,4 +37,3 @@ jobs:
 
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:latest
